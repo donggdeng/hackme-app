@@ -1,3 +1,5 @@
+require 'faker'
+
 namespace :dev do
 
   task :fake => :environment do
@@ -11,7 +13,7 @@ namespace :dev do
     users << User.create!( :email => "ihower@gmail.com", :password => "12345678" )
 
     10.times do |i|
-      event = Event.create!( :name => Faker::Cat.name,
+      event = Event.create!( :name => Faker::Name.name,
                              :description => Faker::Lorem.paragraph,
                              :user_id => users.sample.id )
       puts "Generate Event #{i}"

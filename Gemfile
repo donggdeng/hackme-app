@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.4.10"
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -14,7 +16,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
